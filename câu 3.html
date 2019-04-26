@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>số NT</title>
+</head>
+<body>
+    <script>
+        let x;
+        do {
+            x = prompt(" nhập vào số cần kiếm tra: ");
+            if (!isNaN(x)){
+                break;
+            }else {
+                alert("bạn nhập chưa đúng, vui lòng thử lại!");
+            }
+        }while (isNaN(x));
+        function checkSNT(x) {
+            let y = true;
+            if (x < 2){
+                y = false;
+            } else {
+                for (let i = 2; i < x; i ++){
+                    if (x % i == 0){
+                        y = false;
+                        break;
+                    }
+                }
+            }
+            if (y == true){
+
+                document.write("True");
+            }else {
+                document.write("False");
+            }
+        }
+        checkSNT(x);
+    </script>
+</body>
+</html>

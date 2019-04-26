@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xin chao</title>
+</head>
+<canvas id="myCanvas" style="border: 2px"></canvas>
+<body>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        let Rectangle = function (x, y, width, height, colo) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.colo = colo;
+            let self = this;
+            this.render = function () {
+                ctx.beginPath()
+                ctx.fillStyle = self.colo
+                ctx.fillRect(self.x, self.y, self.width, self.height)
+                ctx.closePath()
+            }
+        }
+        let rectangle = new Rectangle(10,10,200,100,)
+        rectangle.render()
+    </script>
+</body>
+</html>
